@@ -5,19 +5,7 @@ import AccessTimeFilledOutlinedIcon from "@mui/icons-material/AccessTimeFilledOu
 import SendIcon from "@mui/icons-material/Send";
 import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles({
-  btn: {
-    fontSize: 60,
-    backgroundColor: "#000",
-    "&:hover": {
-      backgroundColor: "#fff",
-      color: "#000",
-    },
-  },
-  title: {
-    textDecoration: "underline",
-  },
-});
+const useStyles = makeStyles({});
 
 export default function Create() {
   const classes = useStyles();
