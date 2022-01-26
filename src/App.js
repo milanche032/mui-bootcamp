@@ -1,14 +1,25 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Notes from "./pages/Notes";
 import Create from "./pages/Create";
-import { ThemeProvider } from "@mui/styles";
-import { createTheme } from "@mui/material/styles";
+import { indigo } from "@mui/material/colors";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Layout from "./components/Layout";
 
 const theme = createTheme({
-  pallete: {
+  palette: {
     primary: {
-      main: "#000000",
+      main: indigo[900],
     },
+    secondary: {
+      main: "#69c0ae",
+    },
+  },
+  typography: {
+    fontFamily: "Quicksand",
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700,
   },
 });
 
@@ -16,10 +27,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Router>
-        <Routes>
-          <Route element={<Notes />} path="/" />
-          <Route element={<Create />} path="/create" />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route element={<Notes />} path="/" />
+            <Route element={<Create />} path="/create" />
+          </Routes>
+        </Layout>
       </Router>
     </ThemeProvider>
   );
